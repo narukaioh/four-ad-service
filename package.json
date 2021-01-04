@@ -1,0 +1,50 @@
+{
+  "name": "four-ad-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": ">=12.16.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "CI=true npm run test:unit",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "scripts": {
+    "start:dev": "nodemon --exec babel-node src/index.js",
+    "test:unit": "jest --verbose --coverage --color src/**",
+    "commit": "git-cz"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/node": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "babel-jest": "^26.6.3",
+    "commitizen": "^4.2.2",
+    "commitlint": "^11.0.0",
+    "eslint": "^7.17.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "husky": "^4.3.6",
+    "jest": "^26.6.3",
+    "nodemon": "^2.0.6"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  }
+}
