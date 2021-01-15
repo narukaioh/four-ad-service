@@ -75,9 +75,9 @@ describe('services/4ad/dices-rolls', () => {
   })
 
   describe(`d6xd6 function represents two dices of six sides where we multiply them and it will form a number.`, () => {
-    it('should return numbers greater than or equal 6', () => {
+    it('should return numbers greater than or equal 1', () => {
       const result = d6xd6()
-      expect(result >= 6).toBeTruthy()
+      expect(result >= 1).toBeTruthy()
     })
 
     it('should return numbers less than or equal 36', () => {
