@@ -58,4 +58,31 @@ describe('services/4ad/dices-rolls', () => {
       expect(result <= dice.sides + bonus).toBeTruthy()
     })
   })
+
+  describe(`d66 function represents two dices of six sides. 
+      where together it will form a number. 
+      the first dice represents a decimal and
+      the last one is a numeric...`, () => {
+    it('should return numbers greater than or equal 11', () => {
+      const result = d66()
+      expect(result >= 11).toBeTruthy()
+    })
+
+    it('should return numbers less than or equal 66', () => {
+      const result = d66()
+      expect(result <= 66).toBeTruthy()
+    })
+  })
+
+  describe(`d6xd6 function represents two dices of six sides where we multiply them and it will form a number.`, () => {
+    it('should return numbers greater than or equal 6', () => {
+      const result = d6xd6()
+      expect(result >= 6).toBeTruthy()
+    })
+
+    it('should return numbers less than or equal 36', () => {
+      const result = d6xd6()
+      expect(result <= 36).toBeTruthy()
+    })
+  })
 })
